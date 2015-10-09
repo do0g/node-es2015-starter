@@ -39,9 +39,13 @@ gulp.task('jshint-src',  () => jshint(['src/**/*.js']));
 gulp.task('jscs-src',    () => jscs(['src/**/*.js'], 'src'));  
 gulp.task('lint-src',    ['jscs-src',  'jshint-src']);
 
-gulp.task('jshint-test', () => jshint(['test/**/*.js'], { "expr": true, "predef": config.mocha.globals }));
+gulp.task('jshint-test', () => jshint(['test/**/*.js']));
 gulp.task('jscs-test',   () => jscs(['test/**/*.js'], 'test'));  
 gulp.task('lint-test',   ['jscs-test', 'jshint-test']);
+
+gulp.task('watch', ['test'], function() {
+  gulp.watch(['src/**/*', 'test/**/*', 'package.json', '**/.jshintrc', '.jscsrc'], ['test']);
+});
 
 function jshint(files, overrides) {
   return gulp.src(files)
