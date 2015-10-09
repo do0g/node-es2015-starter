@@ -44,7 +44,12 @@ gulp.task('jscs-test',   () => jscs(['test/**/*.js'], 'test'));
 gulp.task('lint-test',   ['jscs-test', 'jshint-test']);
 
 gulp.task('watch', ['test'], function() {
-  gulp.watch(['src/**/*', 'test/**/*', 'package.json', '**/.jshintrc', '.jscsrc'], ['test']);
+  gulp.watch(['src/**/*', 
+              'test/**/*', 
+              'package.json', 
+              '**/.jshintrc', 
+              '.jscsrc'], 
+             ['test']);
 });
 
 function jshint(files, overrides) {
