@@ -7,16 +7,16 @@ const MyLibrary = {
   }
 };
 
-var fibonacci = {
+export var fibonacci = {
   [Symbol.iterator]: function*() {
-    var pre = 0, cur = 1;
+    let pre = 0, cur = 1;
     for (;;) {
-      var temp = pre;
+      let temp = pre;
       pre = cur;
       cur += temp;
       yield cur;
     }
   }
-}
+};
 
 export default MyLibrary;

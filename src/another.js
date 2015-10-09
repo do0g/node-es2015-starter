@@ -11,3 +11,4 @@ var Another = {
 };
 
 export default Another;
+
