@@ -1,5 +1,5 @@
 {
-  "name": "node-starter",
+  "name": "node-es2015-starter",
   "version": "1.0.0",
   "description": "Node starter project",
   "main": "dist/index.js",
