@@ -3,6 +3,7 @@ import fibonacci from '../../src/fibonacci';
 describe('fibonacci', () => {
   let fib;
   beforeEach(() => {
+    fibonacci.__Rewire__('throws', () => {});
     fib = fibonacci();
   });
 
