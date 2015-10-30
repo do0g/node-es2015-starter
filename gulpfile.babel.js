@@ -60,7 +60,7 @@ function src(files) {
 }
 
 function test() {
-  return src(['test/conf/mocha.js', 'test/unit/**/*.js'], { read: false })
+  return src(['test/conf/mocha.js', 'test/spec/**/*.js'], { read: false })
             .pipe($.mocha({ reporter: 'dot', globals: config.mocha.globals }));
 }
 
